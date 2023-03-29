@@ -50,15 +50,15 @@ public class SignUpController {
 //        return signUpModel; //Find the user ID
 //    }
 //
-    @RequestMapping(value = "/signup/update/{id}", method = RequestMethod.PUT)
-    public SignUpModel updateById(@PathVariable("id") int id, @RequestBody SignUpModel userDetails) throws UserException, EmailException {
-        Optional<SignUpModel> signUpModel = signUpService.getUserById(id);
-        if(signUpModel.isEmpty()) {
-            throw new UserException("Cannot update because user doesn't exist.");
-        }
-        String user = userDetails.getEmailId();
-        if(user.contains("@")) throw new EmailException("Invalid email");
-        return signUpService.updateUser(id,userDetails); //update the user
-    }
+//    @RequestMapping(value = "/signup/update/{id}", method = RequestMethod.PUT)
+//    public SignUpModel updateById(@PathVariable("id") int id, @RequestBody SignUpModel userDetails) throws UserException, EmailException {
+//        Optional<SignUpModel> signUpModel = signUpService.getUserById(id);
+//        if(signUpModel.isEmpty()) {
+//            throw new UserException("Cannot update because user doesn't exist.");
+//        }
+//        String user = userDetails.getEmailId();
+//        if(user.contains("@")) throw new EmailException("Invalid email");
+//        return signUpService.updateUser(id,userDetails); //update the user
+//    }
 
 }
